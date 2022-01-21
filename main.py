@@ -4,13 +4,13 @@ import datetime
 
 
 def check_input():
-    st_date = input("Please input start date. (Example: 2021/12/01)\nstart date: ")
-    end_date = input("Please input end date. (Example: 2022/01/22)\nend date: ")
+    st_date = input("Please input start date. Example: 2021/12/01\nstart date: ")
+    end_date = input("Please input end date. Example: 2022/01/22\nend date: ")
 
     try:
         st_date_obj = datetime.datetime.strptime(st_date, "%Y/%m/%d")
         end_date_obj = datetime.datetime.strptime(end_date, "%Y/%m/%d")
-        if end_date_obj >= st_date_obj:
+        if end_date_obj > st_date_obj:
             return st_date, end_date
         else:
             print("The input end date is smaller than start date. Please try again. \n")
